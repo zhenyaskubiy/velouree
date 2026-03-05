@@ -1,0 +1,109 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: #F5F0E8;
+  --foreground: #2D1A1A;
+  --card: #FFFFFF;
+  --card-foreground: #2D1A1A;
+  --popover: #FFFFFF;
+  --popover-foreground: #2D1A1A;
+  --primary: #3D1C2E;
+  --primary-foreground: #F5F0E8;
+  --secondary: #F5F0E8;
+  --secondary-foreground: #3D1C2E;
+  --muted: #EDE7DD;
+  --muted-foreground: #6B5A5A;
+  --accent: #C4A265;
+  --accent-foreground: #2D1A1A;
+  --destructive: #B91C1C;
+  --destructive-foreground: #FFFFFF;
+  --border: #D4C9BB;
+  --input: #D4C9BB;
+  --ring: #C4A265;
+  --radius: 0.5rem;
+
+  --velour-plum: #3D1C2E;
+  --velour-plum-light: #5A2D45;
+  --velour-gold: #C4A265;
+  --velour-gold-light: #D4B87A;
+  --velour-ivory: #F5F0E8;
+  --velour-cream: #EDE7DD;
+  --velour-dark: #1A0F14;
+}
+
+@theme inline {
+  --font-sans: var(--font-sans), 'Montserrat', system-ui, sans-serif;
+  --font-serif: var(--font-serif), 'Cormorant Garamond', Georgia, serif;
+  --font-mono: 'Geist Mono', monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --color-velour-plum: var(--velour-plum);
+  --color-velour-plum-light: var(--velour-plum-light);
+  --color-velour-gold: var(--velour-gold);
+  --color-velour-gold-light: var(--velour-gold-light);
+  --color-velour-ivory: var(--velour-ivory);
+  --color-velour-cream: var(--velour-cream);
+  --color-velour-dark: var(--velour-dark);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 25s linear infinite;
+}
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out forwards;
+}
